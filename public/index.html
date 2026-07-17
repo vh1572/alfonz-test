@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Board Game Collection</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Private collection</p>
+    <h1>Board Game Catalog</h1>
+    <p>Add games you own, track shelf details, and enrich entries with web research for prices, awards won, and rules.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Add a game</h2>
+      <form id="game-form">
+        <label>Title <input name="title" required placeholder="Catan"></label>
+        <label>Publisher <input name="publisher" placeholder="Kosmos"></label>
+        <label>Year <input name="year" type="number" min="1800" max="2100"></label>
+        <label>Players <input name="players" placeholder="3-4"></label>
+        <label>Play time <input name="playTime" placeholder="60-120 min"></label>
+        <label>Condition <input name="condition" placeholder="Like new"></label>
+        <label>Location <input name="location" placeholder="Living room shelf A"></label>
+        <label class="wide">Notes <textarea name="notes" placeholder="Expansion included, sleeved cards..."></textarea></label>
+        <button type="submit">Save game</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-header">
+        <h2>Collection</h2>
+        <input id="filter" placeholder="Filter collection">
+      </div>
+      <div id="games" class="games"></div>
+    </section>
+  </main>
+
+  <template id="game-card-template">
+    <article class="game-card">
+      <div>
+        <h3></h3>
+        <p class="meta"></p>
+        <p class="notes"></p>
+      </div>
+      <div class="actions">
+        <button class="enrich">Collect internet data</button>
+        <button class="delete">Delete</button>
+      </div>
+      <div class="enrichment"></div>
+    </article>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
